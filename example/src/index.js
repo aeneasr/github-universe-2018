@@ -74,7 +74,14 @@ export default class Presentation extends React.Component {
         <Slide transition={['zoom']} bgColor="primary" notes={
           (
             <div>
-
+              <p>Publishing code on GitHub doesn't an open source project make. Participating in open source as an organization involves building communities, collaborating across teams, identifying appropriate licenses, moderating conversations, and grappling with intellectual property questions.</p>
+              <p>This workshop outlines some best practices and prepares the participants to create a world-class open source strategy.</p>
+              <p>The workshop aims to explain how to set up open source communities both in the public domain “Open Source Software,” and in the enterprise “Inter Source Software.”
+                Where appropriate this workshop will use real world examples to emphasize the lessons learned.
+              </p>
+              <p>Open source software is widely used today by companies in a broad range of industries, but it’s not always fully understood by the executive leaders and decision-makers running the operations.
+                A key problem is that while enterprises develop and follow traditional business plans which dictate their operations and goals, open source software can be baffling. Open source innovation has a methodology of its own and doesn’t follow traditional business processes. One of its biggest differences is that open source development is collaborative, while traditional software and business practices are proprietary and closed. For many businesses, the needed change in philosophy when approaching open source use doesn’t come easily or naturally.
+              </p>
             </div>
           )}>
           <Heading size={1} caps textColor="secondary">
@@ -124,9 +131,9 @@ export default class Presentation extends React.Component {
             height: '200px', width: '200px', marginTop: '50px'
           }} src={images.tac.replace('/', '')} margin="0px auto 40px" />
           <Appear>
-            <Heading size={4} textColor="primary">
-              Independent technology consultant
-            </Heading>
+            <Text textColor="primary">
+              Deutsche Börse Group Technology Advisor, former CTO Bertelsman, Hybris (SAP), Deutsche Telekom
+            </Text>
           </Appear>
         </Slide>
 
@@ -156,9 +163,9 @@ export default class Presentation extends React.Component {
             height: '200px', width: '200px', marginTop: '50px'
           }} src={images.myself.replace('/', '')} margin="0px auto 40px" />
           <Appear>
-            <Heading size={4} textColor="primary">
+            <Text textColor="primary">
               ORY founder & GitHub-native developer
-            </Heading>
+            </Text>
           </Appear>
         </Slide>
 
