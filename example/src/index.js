@@ -1,16 +1,10 @@
 import React from 'react';
 
-import {
-  Appear, BlockQuote, Cite, CodePane, ComponentPlayground, Deck, Fill,
-  Heading, Image, Layout, Link, ListItem, List, Markdown, MarkdownSlides, Quote, Slide, SlideSet,
-  TableBody, TableHeader, TableHeaderItem, TableItem, TableRow, Table, Text, GoToAction
-} from '../../src';
+import { Appear, Deck, Heading, Image, Slide, Text } from '../../src';
 
 import preloader from '../../src/utils/preloader';
 
 import createTheme from '../../src/themes/default';
-
-import Interactive from '../assets/interactive';
 
 require('normalize.css');
 
@@ -96,8 +90,10 @@ export default class Presentation extends React.Component {
 
               So really, Open Source comes with a culture change in an organization. A prime example for this
               is Microsoft which has moved from calling Linux a cancer to using, building, publishing and participating
-              in open source. They joined the Invention Network Community (patent non-aggression pact for OSS vendors) last week.
+              in open source. They joined the Invention Network Community (patent non-aggression pact for OSS vendors)
+              last week.
             </p>
+              <p>ask audience about experience/familiarity with OSS</p>
             </div>
           )}>
           <Heading size={1} caps textColor="secondary">
@@ -113,33 +109,33 @@ export default class Presentation extends React.Component {
             <div>
               <p>
                 Before planning this talk we put ourselves in your seat and thought what we would like
-                to hear if we were interested in starting an open source product.<br />
+                to hear if we were interested in starting an open source product.<br/>
 
                 The issue is, OSS is a very broad topic and it's hard to nail down a universal strategy that
-                bears the next Kubernetes.<br />
+                bears the next Kubernetes.<br/>
 
                 Instead, we want to share our knowledge with you and give you ample time to explore this topic
-                interactively with us.<br />
+                interactively with us.<br/>
 
                 If we run out of time or you want to talk more in-depth about open source, we'll be here all day and
-                would love to talk to any of you! You can approach us after the talk if you want.<br />
+                would love to talk to any of you! You can approach us after the talk if you want.<br/>
 
                 Let's give you some structure by looking at the brief chapters of this workshop. The chapters are
-                aligned with the open source journey. So first things first we have to look at how to get started.<br />
+                aligned with the open source journey. So first things first we have to look at how to get started.<br/>
 
                 Before you jump ahead and create your repository, throw in a license and start hacking, it's a good idea
                 to understand what you are trying to achieve by going open source. For this, we will look at the
-                so-called open source archetypes.<br />
+                so-called open source archetypes.<br/>
 
                 Once you have a better understanding of where your product fits in, it's important to have a framework.
                 Open source is much more than just a license, so we will talk about communication architecture,
                 automation,
-                resource planning, and so on.<br />
+                resource planning, and so on.<br/>
 
                 Once all of that is done and you have some code up on github, it's time to attract your first 10 users,
                 then the next 100, the next 1000, the next million. We will give you some tips how to approach these
                 milestones
-                from our own experience.<br />
+                from our own experience.<br/>
 
                 But if you really want to learn and understand open source, the best way to get started is to contribute
                 to existing projects. Here I want to walk you through how I approach contributing to open source
@@ -174,7 +170,7 @@ export default class Presentation extends React.Component {
           <Image style={{
             borderRadius: '200px',
             height: '200px', width: '200px', marginTop: '50px'
-          }} src={images.tac.replace('/', '')} margin="0px auto 40px" />
+          }} src={images.tac.replace('/', '')} margin="0px auto 40px"/>
           <Appear>
             <Text textColor="primary">
               Deutsche Börse Group Technology Advisor, former CTO Bertelsman, Hybris (SAP), Deutsche Telekom
@@ -188,8 +184,8 @@ export default class Presentation extends React.Component {
             </div>
           )}>
           <Image style={{ height: '300px', marginTop: '50px' }}
-            src={images.dbg.replace('/', '')}
-            margin="0px auto 40px" />
+                 src={images.dbg.replace('/', '')}
+                 margin="0px auto 40px"/>
           <Appear>
             <Text textColor="primary">
               Frankfurt Stock Exchange (Eurex, Xetra, STOXX)
@@ -214,7 +210,7 @@ export default class Presentation extends React.Component {
           <Image style={{
             borderRadius: '200px',
             height: '200px', width: '200px', marginTop: '50px'
-          }} src={images.myself.replace('/', '')} margin="0px auto 40px" />
+          }} src={images.myself.replace('/', '')} margin="0px auto 40px"/>
           <Appear>
             <Text textColor="primary">
               Founder & GitHub-native Developer, Security Expert
@@ -249,8 +245,8 @@ export default class Presentation extends React.Component {
             </div>
           )}>>
           <Image style={{ height: '300px', marginTop: '50px' }}
-            src={images.ory.replace('/', '')}
-            margin="0px auto 40px" />
+                 src={images.ory.replace('/', '')}
+                 margin="0px auto 40px"/>
           <Appear>
             <Text textColor="primary">
               Developer-first & Open Source Cloud Security Technology
@@ -279,13 +275,18 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['slide']} bgDarken={0.75} bgColor="tertiary" notes={
           (
-            <div>
-              <p>
-                The first important part is to understand where your product fits in. It's therefore important to
-                talk about open source archetypes. These archetypes are nothing I invented but are the condensed
-                knowledge of a mozilla report.
-              </p>
-            </div>
+            <ul>
+              <li>B2B Open Source (Android, Chromium): Spur OEM adoption</li>
+              <li>Multi-Vendor Infrastructure (Kubernetes, Openstack): de-facto standatization by multiple companies
+              </li>
+              <li>Trusted Vendor (MongoDB): alternative to closed source vendors, decreases lock in, increases trust
+              </li>
+              <li>Bathwater: code dumped over the wall, often by companies with no prior oss epxerience that sunset a
+                product and want to oss it. sometimes seen as proof that oss doesn't work. but can be good first
+                experience with oss in a company if the goal is to familiarize oneself with IP/legal questions before
+                approaching a more ambitions project
+              </li>
+            </ul>
           )}>
           <Heading size={2} fit caps textColor="secondary">
             Archetypes
@@ -300,170 +301,10 @@ export default class Presentation extends React.Component {
         <Slide transition={['slide']} bgDarken={0.75} bgColor="tertiary" notes={
           (
             <div>
-              <p>
-                B2B Open source is designed to spur wide OEM adoption by partners and competitors
-                alike. It drives out competing options because the license cost of zero discourages new entrants in the
-                market. The best-known examples for B2B Open Source is Android and Chromium.
-              </p>
-              <p>
-                It is worth noting that Google does not derive much direct revenue from Android. Instead,
-                Android’s popularity puts Google’s products and search preferences in the hands of users,
-                and that creates opportunities for Google. Android users default to Google’s search engine,
-                buy media from Google, pay for apps in Google’s app store, provide a river of data for Google
-                to mine, and favor Google’s app ecosystem (Calendar, Gmail, Maps, etc). All of that generates
-                revenue and strategic advantage for Google.
-              </p>
-              <p>This archetype is thus a strategy for gaining marketshare as a revenue opportunity.
-              </p>
             </div>
           )}>
-          <Heading size={1} textColor="secondary">
-            B2B Open Source
-          </Heading>
-          <Appear>
-            <Heading size={3} textColor="primary">
-              Android, Chromium
-            </Heading>
-          </Appear>
-        </Slide>
-
-        <Slide transition={['slide']} bgDarken={0.75} bgColor="tertiary" notes={
-          (
-            <div>
-              <p>Multi-Vendor Infrastructure are large software projects that provide
-                fundamental facilities to a wide array of other businesses. This infrastructure is designed
-                collaboratively by multiple vendors and then each deploys it in their own way. Kubernetes
-                and OpenStack are two prominent Multi-Vendor Infrastructure projects that most developers
-                will have heard of.
-              </p>
-              <p>A good way to distinguish a Multi-Vendor
-                Infrastructure project from Business-to-Business (B2B) Open Source is to look at how often
-                contributors continue to participate after they switch employers. When that phenomenon
-                occurs, it indicates that multiple organizations use the software as infrastructure in roughly
-                the same way, and thus the same person may continue to work on this.
-              </p>
-              <p>
-                Note that both the Multi-Vendor Infrastructure and the B2B Open Source archetypes are
-                patterns that achieve benefits at scale. The largest advantage of open source to these
-                ecosystems is broad standardization (including informal or de facto standardization).
-
-                It would be difficult to achieve this with a proprietary approach; open source lowers the cost of
-                participation and powers network effects that lead to scale.
-              </p>
-            </div>
-          )}>
-          <Heading size={1} textColor="secondary">
-            Multi-Vendor Infrastructure
-          </Heading>
-          <Appear>
-            <Heading size={3} textColor="primary">
-              Kubernetes, Open Stack
-            </Heading>
-          </Appear>
-        </Slide>
-
-        <Slide transition={['slide']} bgDarken={0.75} bgColor="tertiary" notes={
-          (
-            <div>The guiding principle behind the Trusted Vendor archetype is that nobody can build
-              everything. Sometimes people just want a complete solution from a vendor. Switching costs
-              for such products are often high, so choosing a proprietary solution could lock one into a
-              technology and a vendor. That lock-in and the related dependence gives vendors power over
-              their customers and users, which allows vendors to overprice and underdeliver. Customers
-              and users too often find themselves trapped in a relationship that doesn’t meet their needs
-              and sometimes feels abusive.<br />
-
-              Open source is the antidote to vendor lock-in. First, it enables competition. If a vendor
-              fails or pivots or suddenly raises prices, a functioning open source ecosystem can provide
-              a replacement without high switching costs. Second, open source ecosystems tend toward
-              open standards. Integration, custom development, or even switching all come easier, faster
-              and cheaper if the underlying solution makes good use of common standards.<br />
-
-              This connection between open source and risk-free vendor dependence is strong enough to
-              shift customer preferences. More and more procurement processes are aimed at open source
-              solutions precisely because they avoid lock-in during long-term vendor relations.<br />
-
-              There are other elements of trust besides just defusing the threat of lock-in like participation.
-              Those benefits are often mainly signaling mechanisms: even if customers
-              never take direct advantage of the available collaboration mechanisms, they are reassured by
-              the existence of those mechanisms.<br />
-            </div>
-          )}>
-          <Heading size={1} textColor="secondary">
-            Trusted Vendor
-          </Heading>
-          <Appear>
-            <Heading size={3} textColor="primary">
-              MongoDB
-            </Heading>
-          </Appear>
-        </Slide>
-
-        <Slide transition={['slide']} bgDarken={0.75} bgColor="tertiary" notes={
-          (
-            <div>
-              <p>
-                There are more types of open source software. Extremely open projects like GoLang or Rust, Dependencies
-                such as OpenSSL and mass Market products like FireFox.
-              </p>
-              <p>
-                The last archetype I want to touch is the "Bathwater" archetype.
-              </p>
-              <p>
-                This is code dumped over the wall. It is purely about distribution, not about
-                any particular mode of production. Think of it as the ground state of open source projects:
-                someone publishes code under a free license but invests no followup effort into building
-                open source dynamics.
-              </p>
-              <p>
-                Typically, the published code is not the organization’s prized technology. In some cases it is a
-                one-off publication and thus likely to become quickly outdated. In other cases, there may be
-                a public repository, but that repository is not where development occurs — instead it is just a
-                container for periodic snapshots of particular release points. Sometimes there is not even a
-                public repository, and the only thing published is a release tarball or a sequence of them.
-
-                Merely publishing code under an open source
-                license is unlikely to generate any of the beneficial effects that come from truly investing
-                in open source. When those benefits don’t materialize, developers sometimes take it as
-                evidence that open source “doesn’t work”.
-              </p>
-              <p>
-                Although experienced open source professionals look down on Bathwater projects, they do have
-                some uses. First, they work as an initial foray into open source. For inexperienced firms testing
-                the waters, there are few benefits from open sourcing this way but also few risks. They can claim
-                to be doing open source, send signals that they are open to more open source engagement, and
-                perhaps that positions them to do a more complete job the next time around.
-              </p>
-              <p>
-                Second, even for firms experienced in open source, Bathwater is a reasonable final state for an
-                abandoned initiative. When an organization is ready to stop devoting any resources to a project,
-                explicitly putting the code into Bathwater mode, and giving the world permission to take it up,
-                can be a final attempt to give the project a chance at impact and serve the existing user base.
-              </p>
-              <p>
-                Bathwater treats the code like a forkable resource. Users of Bathwater projects don’t expect
-                anything from upstream, because there is no upstream anymore, but they can can consider
-                their involvement as a greenfield opportunity. If they are willing to invest in the code, they
-                can choose any one of the other archetypes and start building toward it.
-              </p>
-            </div>
-          )}>
-          <Heading size={2} fit textColor="secondary">
-            Golang, OpenSSL, libmp4, FireFox, -
-          </Heading>
-          <Appear>
-            <Text textColor="primary">
-              Wide Open, Upstream Dependency, Mass Market, Bathwater
-            </Text>
-          </Appear>
-        </Slide>
-
-        <Slide transition={['slide']} bgDarken={0.75} bgColor="tertiary" notes={
-          (
-            <div>
-            </div>
-          )}>
-          <Heading size={2} fit textColor="secondary">
-            Inter Source Software
+          <Heading size={2} fit caps textColor="secondary">
+            Inner Source Software
           </Heading>
         </Slide>
 
@@ -492,8 +333,10 @@ export default class Presentation extends React.Component {
                 <li>- First step is understanding how OSS ecosystems work</li>
                 <li>- No talk can ever teach this</li>
                 <li>- So the easiest thing you can do is to experience it yourself</li>
-                <li>- Pick a product which fits your OSS archetype, check out their communication infrastructure, their rules, read issue
-                and documentation, understand what it's all about - and contribute to the project. Even contributing simple things will expose you
+                <li>- Pick a product which fits your OSS archetype, check out their communication infrastructure, their
+                  rules, read issue
+                  and documentation, understand what it's all about - and contribute to the project. Even contributing
+                  simple things will expose you
                   to the open source mindest and help you tremendously in understanding how this works.
                 </li>
               </ul>
@@ -509,13 +352,22 @@ export default class Presentation extends React.Component {
             <div>
               <ul>
                 <li>Pick an ecosystem you want to target</li>
-                <li>Pick the best technology to address your issue. Don't just do Java because you've done Java all your life</li>
+                <li>Pick the best technology to address your issue. Don't just do Java because you've done Java all your
+                  life
+                </li>
                 <li>Are you writing something that runs as a server? Make it work out of the box with kubernetes</li>
-                <li>Are you writing a frontend? Integrate it in the ES6 ecosystem, choose something developers are familiar with like React or Vue</li>
-                <li>Are you writing something performance critical that runs on the network? Choose a language like Go</li>
-                <li>All of these decisions will result in a better product quality. It will raise awareness in the community</li>
+                <li>Are you writing a frontend? Integrate it in the ES6 ecosystem, choose something developers are
+                  familiar with like React or Vue
+                </li>
+                <li>Are you writing something performance critical that runs on the network? Choose a language like Go
+                </li>
+                <li>All of these decisions will result in a better product quality. It will raise awareness in the
+                  community
+                </li>
                 <li>The synergies with other tools and platforms, like google cloud or aws, will drive adoption</li>
-                <li>All of these things are important to get right. Don't just do what feels comfortable. Do what's challenging and use the right tools.</li>
+                <li>All of these things are important to get right. Don't just do what feels comfortable. Do what's
+                  challenging and use the right tools.
+                </li>
               </ul>
             </div>
           )}>
@@ -731,6 +583,11 @@ export default class Presentation extends React.Component {
         <Slide transition={['slide']} bgDarken={0.75} bgColor="tertiary" notes={
           (
             <ul>
+              <li>Monetization</li>
+              <li>Pitfalls</li>
+              <li>Support from Top Management</li>
+              <li>Funding</li>
+              <li>Day-to-day Experience</li>
               <li>https://www.linuxfoundation.org/wp-content/uploads/2017/10/Open_Source_Project_Launch_Checklist.pdf</li>
             </ul>
           )}>
@@ -739,7 +596,8 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide transition={['slide']} bgDarken={0.75} bgColor="tertiary" notes={
+
+        <Slide transition={['slide']} bgDarken={0.75} bgColor="secondary" notes={
           (
             <ul>
               <li>Monetization</li>
@@ -747,11 +605,21 @@ export default class Presentation extends React.Component {
               <li>Support from Top Management</li>
               <li>Funding</li>
               <li>Day-to-day Experience</li>
+              <li>https://www.linuxfoundation.org/wp-content/uploads/2017/10/Open_Source_Project_Launch_Checklist.pdf</li>
             </ul>
           )}>
-          <Heading size={2} fit caps textColor="secondary">
-            Q & A
+          <Heading size={2} fit caps textColor="tertiary">
+            Thank You!
           </Heading>
+          <Text textColor="primary">
+            Aeneas: github.com/aeneasr | twitter.com/_aeneasr
+          </Text>
+          <Text textColor="primary">
+            Thomas: github.com/tacurran | twitter.com/tacurran
+          </Text>
+          <Text textColor="primary">
+            www.ory.sh | www.deutsche-boerse.com
+          </Text>
         </Slide>
 
 
