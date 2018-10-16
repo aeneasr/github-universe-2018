@@ -107,40 +107,18 @@ export default class Presentation extends React.Component {
         <Slide transition={['slide']} bgDarken={0.75} bgColor="tertiary" notes={
           (
             <div>
+              <ul>
+                <li>OSS is a broad topic, no universal strategy</li>
+                <li>we want to share our experience</li>
+                <li>give you ample time to explore the topic with us</li>
+                <li>let's give some structure, and walk through the lifecycle of open source</li>
+                <li>in day 1, we'll define a framework</li>
+                <li>we'll also look at how you'll get traction on your product</li>
+                <li>and finally, it's time for you to learn by example</li>
+                <li>the best thing you can is to contribute to oss</li>
+              </ul>
               <p>
-                Before planning this talk we put ourselves in your seat and thought what we would like
-                to hear if we were interested in starting an open source product.<br/>
 
-                The issue is, OSS is a very broad topic and it's hard to nail down a universal strategy that
-                bears the next Kubernetes.<br/>
-
-                Instead, we want to share our knowledge with you and give you ample time to explore this topic
-                interactively with us.<br/>
-
-                If we run out of time or you want to talk more in-depth about open source, we'll be here all day and
-                would love to talk to any of you! You can approach us after the talk if you want.<br/>
-
-                Let's give you some structure by looking at the brief chapters of this workshop. The chapters are
-                aligned with the open source journey. So first things first we have to look at how to get started.<br/>
-
-                Before you jump ahead and create your repository, throw in a license and start hacking, it's a good idea
-                to understand what you are trying to achieve by going open source. For this, we will look at the
-                so-called open source archetypes.<br/>
-
-                Once you have a better understanding of where your product fits in, it's important to have a framework.
-                Open source is much more than just a license, so we will talk about communication architecture,
-                automation,
-                resource planning, and so on.<br/>
-
-                Once all of that is done and you have some code up on github, it's time to attract your first 10 users,
-                then the next 100, the next 1000, the next million. We will give you some tips how to approach these
-                milestones
-                from our own experience.<br/>
-
-                But if you really want to learn and understand open source, the best way to get started is to contribute
-                to existing projects. Here I want to walk you through how I approach contributing to open source
-                software
-                and the next step would be for you to choose a project and explore their open source approach.
               </p>
             </div>
           )}>
@@ -230,13 +208,13 @@ export default class Presentation extends React.Component {
                 We build cloud native security products and rely soley on open source licenses.
               </p>
               <p>
-                I chose the open source approach because as a developer, I am fed up by enterprise-sales constantly
-                over-selling and under-delivering. Open source is the remedy of that and we had great success with our
-                approach.
+                I chose the open source approach because as a developer, I want to see what the thing is doing that I'm using.
+                Open source is the solution for that and we had great success with our approach.
               </p>
               <p>
-                Besides 16k GH Stars and 1 Million Docker Image Downloads, we have an extraordinary community of about
-                700
+                And in fact, today we reached the 1 billion requests mark, so we secured a billion API requests with our
+                open source products. And we have 16k GH Stars and 1 Million Docker Image Downloads,
+                we have an extraordinary community of about 700
                 members, almost 300 contributors and adopters form all backgrounds.
               </p>
               <p>
@@ -451,14 +429,19 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['slide']} bgDarken={0.75} bgColor="tertiary" notes={
           (
-            <div>
-            </div>
+            <ul>
+              <li>Just GitHub isn't enough.</li>
+              <li>You need a real time communication infrastructure</li>
+              <li>Answer in real time too</li>
+              <li>Set up a forum to get better S E O</li>
+              <li>Some of the tools you can use are</li>
+            </ul>
           )}>
           <Heading size={2} textColor="secondary">
             Communication Infrastructure
           </Heading>
           <Appear>
-            <Heading size={4} textColor="primary">
+            <Heading size={4} textColor="quarternary">
               Mattermost
             </Heading>
           </Appear>
@@ -476,8 +459,12 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['slide']} bgDarken={0.75} bgColor="tertiary" notes={
           (
-            <div>
-            </div>
+            <ul>
+              <li>Licensing is a big topic, we could probably talk a whole day about it</li>
+              <li>NEXT there is apache 2, mit and stricter ones like gpl</li>
+              <li>but let's not go over legal details, instead I want to give you some tools you can use</li>
+
+            </ul>
           )}>
           <Heading size={2} textColor="secondary">
             License
@@ -511,8 +498,11 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['slide']} bgDarken={0.75} bgColor="tertiary" notes={
           (
-            <div>
-            </div>
+            <ul>
+              <li>real time, zero latency; talk to your users; take them seriously; tell them about hydra feedback</li>
+              <li>keep them in the game; ask them to submit changes; share ideas; share use cases; motivate them to engage with you</li>
+              <li>leadership is crucial: you need a vision; </li>
+            </ul>
           )}>
           <Heading size={1} fit caps textColor="secondary">
             The three pillars
